@@ -21,5 +21,5 @@ app.config.from_object('config')
 
 # Default frontend application what the user sees
 from app.frontend.views import frontend
-app.register_blueprint(default)
+app.register_blueprint(frontend)
 
