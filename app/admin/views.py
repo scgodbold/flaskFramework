@@ -7,19 +7,15 @@ from flask import render_template, flash, redirect, \
 # Uncomment for database support
 # from app import db
 
-frontend = Blueprint('frontend', __name__)
+admin = Blueprint('admin', __name__, url_prefix='/admin')
 
 """
 Used for user auth uncomment for user auth
-@frontend.before_request
+@admin.before_request
 def before_request():
 	g.user = current_user
 """
 
-@frontend.route('/')
+@admin.route('/')
 def index():
-	return render_template('home.html')
-
-@frontend.route('/login', methods=['GET', 'POST'])
-def login():
-	return render_template('login.html')
+	return render_template('admin/adminbase.html')

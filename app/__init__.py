@@ -16,8 +16,8 @@ app.config.from_object('config')
 # app.register_blueprint(users)
 
 # Uncomment to enable an admin panel and interface 
-# from app.admin.views import admin
-# app.register_blueprint(admin)
+from app.admin.views import admin
+app.register_blueprint(admin)
 
 # Default frontend application what the user sees
 from app.frontend.views import frontend
